@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="estils.css">
+  <script src="funcions.js"></script>
+  <script>
+    var llista = [];
+
+    function iniciar(){
+      
+      //carregar localStorage
+      carregarlocalStorage();
+
+      //Renderitzar llista carregada
+      renderitzarLlista();
+    }
+
+  </script>
+</head>
+<!-- La funció iniciar s'executa quan el HTML està completament generat.-->
+<body onload="iniciar()">
+  <div>
+    <label for="sNom">Nom:</label>
+    <input type="text" id="sNom" />
+    <br/>
+    <label for="sCognom">Cognom:</label>
+    <input type="text" id="sCognom" />
+    <br/>
+    <label for="sTelefon">Telefon:</label>
+    <input type="tel" id="sTelefon" />
+    <br/>
+    <label for="sAdresa">Adreça:</label>
+    <input type="text" id="sAdresa" />
+    <br/>
+    <label for="sLocalitat">Localitat:</label>
+    <input type="text" id="sLocalitat" />
+    <br/>
+    <button type="button" id="sboto" onclick="afegir()">Afegir</button>
+    <h1>Agenda</h1>
+    <select id="sSeleccionador" onchange="funciocercadora()">
+    <option value="1">Cerca pel nom:</option>
+    <option value="2">Cerca per Localitat:</option>
+    </select>
+    <input type="text" id="sCercador" onkeyup="cercadorNoms()" > 
+  </div>
+  <div id="llista">
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+ul li button{
+    opacity: 0%;
+}
+
+ul li:hover button{
+    opacity: 100%;
+}
